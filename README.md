@@ -57,7 +57,11 @@ export default {
   }
 }
 ```
-
+When using composition api `this` doesn't work. Use the following instead inside setup():
+```
+const { $fire } = useContext();
+const store = useStore();
+```
 
 ## Build Setup
 
