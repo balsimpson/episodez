@@ -43,22 +43,22 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     ['@nuxtjs/firebase',
-    {
-      config: {
-        apiKey: "AIzaSyAg0z6Ykx9mAzmBRi_i-pQ7g9ApF1y5Iy4",
-        authDomain: "episodez.firebaseapp.com",
-        projectId: "episodez",
-        storageBucket: "episodez.appspot.com",
-        messagingSenderId: "1027158888659",
-        appId: "1:1027158888659:web:c00fd0cd76c4cae2970426",
-        measurementId: "G-N3MNKPSGVF",
-      },
-      services: {
-        auth: true,
-        firestore: true,
-        analytics: true
-      }
-    }]
+      {
+        config: {
+          apiKey: "AIzaSyDLIgIzEr-7awm8O07EIUxWeDk4GJuYhcw",
+          authDomain: "nuxttemplate.firebaseapp.com",
+          projectId: "nuxttemplate",
+          storageBucket: "nuxttemplate.appspot.com",
+          messagingSenderId: "758572116616",
+          appId: "1:758572116616:web:12a5d4ed3150576ae3cd3d",
+          measurementId: "G-ZXBDKR2HE1"
+        },
+        services: {
+          auth: true,
+          firestore: true,
+          analytics: true
+        }
+      }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

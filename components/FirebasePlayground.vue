@@ -1,7 +1,7 @@
 <!-- Please remove this file from your project -->
 <template>
   <div
-    class="relative flex flex-col justify-center min-h-screen bg-gray-100 items-top sm:items-center sm:pt-0 "
+    class="relative grid justify-center grid-cols-2 bg-gray-100 items-top sm:pt-0"
   >
     <!-- Create New User -->
     <div class="container flex justify-center px-5 py-12 mx-auto">
@@ -86,6 +86,7 @@
         </p>
       </div>
     </div>
+    
   </div>
 </template>
 
