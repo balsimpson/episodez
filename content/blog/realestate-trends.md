@@ -1,0 +1,28 @@
+---
+title: Real Estate Trends in Covid 19 Era
+description: Covid-19 has undoubtedly changed the way we live and work. The virus has affected the modus operandi of every sector in the global economy, realty included. This change in the modus Vivendi has resulted in the emergence of new trends in the global markets of real estate; it is hard to say whether real estate market will function the same way in a post-Covid world.
+img: realestate-trends.jpeg
+author: Shruti Tengikai
+---
+
+# Real Estate Trends in Covid 19 Era
+
+Covid-19 has undoubtedly changed the way we live and work. The virus has affected the modus operandi of every sector in the global economy, realty included.
+
+This change in the modus Vivendi has resulted in the emergence of new trends in the global markets of real estate; it is hard to say whether real estate market will function the same way in a post-Covid world.
+
+With that, it becomes essential to keep up with the new trends which will affect the investments in real estate, given the evolution and change in the supply and demand dynamics.
+
+We at ProcMeet try to keep you updated with the emergence of new trends for optimum investment patterns.
+
+## Technological Innovation
+Digitalization has revolutionized the real estate and empowered investors to benefit reliably, conveniently and securely. Technology has been playing an essential role in the development of the real estate sector globally and has led to profits not only for buyers but also the sellers. Not just in terms of construction and streamlining but even in terms of simplifying the property buying process. Access to information, customer expectations, and client service are totally different from what they were even five years prior. Innovation has expanded the development of quality principles and decreased the time taken to assemble the framework. Meetings, seminars and launches are possible with attendees from all over the world, at once. The concept of augmented and virtual reality is picking up pace where buyers can experience the property without physically visiting it. There are also innovations concerning Artificial Intelligence (AI) & Virtual Reality (VR) in this sector that is pushing for more opportunities and enhanced customer experience.
+
+## Ownership of a home
+Corona-virus has changed the way buyers think. The idea of possessing a home has increased importance despite an unavoidable economic slowdown and the substantial vulnerability in the market. The lockdown has also reinforced the importance of owning a home because it is probably one of the only places where one can feel safe and secure. Remote working as a trend is here to stay, even after the pandemic loosens its grip, most companies will explore some version of WFH for its employees. Consequently, individuals who were beforehand happy with living in leased facilities would now want to purchase homes soon. The home will indeed assume unmistakable quality over the position of work and impact metropolitan turn of events and our land decisions.
+- ### Hipsterbia: 
+    The live-work-play districts that have taken hold in urban areas are increasingly spreading out to suburban communities. Millennials are giving up their urban residencies and moving to the suburbs as they’re turning parents. And this is happening because they are going for affordability. What’s more, they can have their cake and eat it too, what with all the facilities and amenities that go with the urban lifestyle – bazaars, cinema halls and workplaces — all being stone’s throw away from their new habitations. Furthermore, they can have it both ways, what with all the offices and civilities that go with the metropolitan way of life – bazaars, cinema halls and work environments — all being a short distance from their new homes. Designers are calling this pattern “hipsturbia”, and that is the thing that happened when fashionable people couldn’t bear the cost of living in Brooklyn any longer and begin relocating to suburbia. As recent college grads settle down, raise kids and taking everything into account, they are searching for inexpensive housing as also educational institutions worth their salt, they are opting to migrate to the suburbs, which is more of a slight adjustment in the face of necessity rather than a compromise in any way.
+- ### Warehousing – solutions and evolution
+    With Covid-19 changing the buying behaviour of the consumer, acceleration in e-commerce and web-based services are likely to accelerate. Online shopping and delivery portals, especially essential services, groceries and other items, will turn to look for more space for storage purposes. The corona-virus crisis has inadvertently increased the need for warehousing space., driven by online retailers as well as investors, looking for an alternative class of asset, other than malls, shopping centres and commercial spaces. Even as supply-side disruptions continue with expected delays in construction of warehousing hubs, the sector is set to turn into a searched after venture opportunity with the requirement for high-calibre, mechanized offices for smooth flexibly chain measures now like never before.
+
+In conclusion, post-Covid-19 and currently, trends such as these will hold to reshape the functioning and progression of real estate markets globally, with factors of safety, changing buying behaviour of consumers and investors, and growing opportunities for vendors and suppliers to the ease of transactions.
