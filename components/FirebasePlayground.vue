@@ -122,7 +122,7 @@ export default {
     };
 
     const readFromFirestore = async () => {
-      const lists = $fire.firestore.collection("lists");
+      const lists = $fire.firestore.collection(collectionName.value);
       const items = [];
       try {
         const docs = await lists.get();
@@ -131,8 +131,8 @@ export default {
           // console.log("doc", doc.data());
         });
         readFromFirestoreMsg.value = JSON.stringify(items);
-      } catch (e) {
-        // console.log("error", e);
+      } catch (error) {
+        console.log("error", error);
         readFromFirestoreMsg.value = error.message;
         return;
       }

@@ -34,6 +34,11 @@ export default {
     '@nuxtjs/composition-api/module'
   ],
 
+  // router
+  router: {
+    middleware: ['auth']
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -54,7 +59,13 @@ export default {
           measurementId: "G-ZXBDKR2HE1"
         },
         services: {
-          auth: true,
+          auth: {
+            persistence: 'local',
+            initialize: {
+              onAuthStateChangedAction: 'onAuthStateChangedAction',
+              subscribeManually: false
+            }
+          },
           firestore: true,
           analytics: true
         }
