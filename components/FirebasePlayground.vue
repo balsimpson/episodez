@@ -15,16 +15,16 @@
           Create a new user with email and password
         </p>
         <div class="relative mb-4">
-          <label for="email" class="text-sm leading-7 text-gray-600"
-            >Email</label
-          >
           <input
             v-model="email"
             type="email"
             id="email"
             name="email"
-            class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 "
+            class="w-full text-base leading-8 text-gray-700 placeholder-transparent transition-colors duration-200 ease-in-out bg-white border-b border-gray-300 outline-none peer focus:ring-0" placeholder="Email"
           />
+          <label for="email" class="absolute left-0 text-sm text-gray-600 transition-all -top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-1"
+            >Email</label
+          >
         </div>
         <div class="relative mb-4">
           <label for="email" class="text-sm leading-7 text-gray-600"
