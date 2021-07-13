@@ -11,20 +11,20 @@
           <span class="ml-3 text-xl"></span>
         </a>
 
-        <button
-          class="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-100 border-0 rounded focus:outline-none hover:bg-gray-200 md:mt-0 "
-        >
-          Cart
+        <button class="inline-flex">
           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8"
             fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-1"
             viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
           </svg>
         </button>
       </div>
@@ -45,20 +45,18 @@
         />
         <div class="absolute opacity-0 carousel-item" style="height: 50vh">
           <div
-            class="block w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center "
-            style="
-              background-image: url('https://source.unsplash.com/random?chair');
-            "
+            class="block w-full h-full pt-6 mx-auto overflow-x-hidden bg-right bg-cover rounded md:pt-0 md:items-left "
+            style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');"
           >
-            <div class="container mx-auto">
+            <div class="flex items-end justify-center h-full py-4 mb-4 bg-gradient-to-t from-black">
               <div
-                class="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start "
+                class="flex flex-col items-end w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start "
               >
-                <p class="my-4 text-2xl text-black">
+                <p class="text-2xl text-white">
                   Stripy Zig Zag Jigsaw Pillow and Duvet Set
                 </p>
                 <a
-                  class="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black "
+                  class="inline-block mb-8 text-xl leading-relaxed text-white no-underline border-b border-gray-600 hover:text-black hover:border-black"
                   href="#"
                   >view product</a
                 >
@@ -92,9 +90,7 @@
         >
           <div
             class="block w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center "
-            style="
-              background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80');
-            "
+            style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80');"
           >
             <div class="container mx-auto">
               <div
@@ -133,9 +129,7 @@
         <div class="absolute opacity-0 carousel-item" style="height: 50vh">
           <div
             class="block w-full h-full pt-6 mx-auto bg-bottom bg-cover md:pt-0 md:items-center "
-            style="
-              background-image: url('https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');
-            "
+            style="background-image: url('https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');"
           >
             <div class="container mx-auto">
               <div
@@ -212,14 +206,14 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-3">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3">
           <div class="p-4">
             <div
               class="h-full overflow-hidden border-2 border-gray-200 rounded-lg border-opacity-60 "
             >
               <img
-                class="object-cover object-center w-full lg:h-48 md:h-36"
-                src="https://source.unsplash.com/random?chair"
+                class="object-cover object-center w-full h-64 lg:h-48 md:h-36"
+                src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=701&q=80"
                 alt="blog"
               />
               <div class="p-6">
@@ -267,8 +261,8 @@
               class="h-full overflow-hidden border-2 border-gray-200 rounded-lg border-opacity-60 "
             >
               <img
-                class="object-cover object-center w-full lg:h-48 md:h-36"
-                src="https://source.unsplash.com/random?sofa"
+                class="object-cover object-center w-full h-64 lg:h-48 md:h-36"
+                src="https://images.unsplash.com/photo-1578653282816-a508bd2d0435?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=734&q=80"
                 alt="blog"
               />
               <div class="p-6">
@@ -284,7 +278,10 @@
                   Photo booth fam kinfolk cold-pressed sriracha leggings
                   jianbing microdosing tousled waistcoat.
                 </p>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between pt-1 border-t">
+                  <div class="text-xl font-bold">
+                  <span class="text-gray-400">₹</span>16,000
+                </div>
                   <a
                     class="inline-flex items-center text-red-500 md:mb-2 lg:mb-0 "
                     >Learn More
@@ -302,11 +299,7 @@
                     </svg>
                   </a>
                   
-                  <div class="text-xl font-bold">
-                  <span class="text-gray-400">₹</span>16,000
-                </div>
-                  
-                  </span>
+
                 </div>
               </div>
             </div>
@@ -317,8 +310,8 @@
               class="h-full overflow-hidden border-2 border-gray-200 rounded-lg border-opacity-60 "
             >
               <img
-                class="object-cover object-center w-full lg:h-48 md:h-36"
-                src="https://source.unsplash.com/random?clock"
+                class="object-cover object-center w-full h-64 lg:h-48 md:h-36"
+                src="https://images.unsplash.com/photo-1601392740426-907c7b028119?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
                 alt="blog"
               />
               <div class="p-6">
@@ -334,7 +327,10 @@
                   Photo booth fam kinfolk cold-pressed sriracha leggings
                   jianbing microdosing tousled waistcoat.
                 </p>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between pt-1 border-t">
+                  <div class="text-xl font-bold">
+                  <span class="text-gray-400">₹</span>16,000
+                </div>
                   <a
                     class="inline-flex items-center text-red-500 md:mb-2 lg:mb-0 "
                     >Learn More
@@ -352,15 +348,12 @@
                     </svg>
                   </a>
                   
-                  <div class="text-xl font-bold">
-                  <span class="text-gray-400">₹</span>16,000
-                </div>
-                  
-                  </span>
+
                 </div>
               </div>
             </div>
           </div>
+        
           
         </div>
       </div>

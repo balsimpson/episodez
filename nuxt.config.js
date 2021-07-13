@@ -18,6 +18,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "~/assets/css/fontArvo.css",
+    "~/assets/css/fontMontserrat.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -75,7 +77,9 @@ export default {
           firestore: true,
           analytics: true
         }
-      }]
+      }],
+
+      '@nuxtjs/toast',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
