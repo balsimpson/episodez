@@ -121,6 +121,13 @@ export default {
       }
     };
 
+    const signIn = async () => {
+      let res = await $fire.auth.signInWithEmailAndPassword(
+        inputEmail,
+        inputPassword
+      );
+    }
+
     const readFromFirestore = async () => {
       const lists = $fire.firestore.collection(collectionName.value);
       const items = [];

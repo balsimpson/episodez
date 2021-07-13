@@ -63,6 +63,14 @@ const { $fire } = useContext();
 const store = useStore();
 ```
 
+Add Firebase Hosting
+```
+firebase init
+
+choose public folder as dist
+
+```
+
 ## Build Setup
 
 ```bash

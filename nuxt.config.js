@@ -60,6 +60,12 @@ export default {
         },
         services: {
           auth: {
+            ssr: {
+              ignorePaths: [
+                '/admin', // path is ignored if url.pathname.startsWith('/admin')
+                /^api/ // path is ignored if url.pathname without the leading slash (/) matches the RegExp
+              ]
+            },
             persistence: 'local',
             initialize: {
               onAuthStateChangedAction: 'onAuthStateChangedAction',
