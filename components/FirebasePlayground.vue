@@ -1,30 +1,12 @@
 <!-- Please remove this file from your project -->
 <template>
   <div
-    class="
-      relative
-      grid
-      justify-center
-      grid-cols-2
-      bg-gray-100
-      items-top
-      sm:pt-0
-    "
+    class="relative grid justify-center grid-cols-2 bg-gray-100 items-top sm:pt-0 "
   >
     <!-- Create New User -->
     <div class="container flex justify-center px-5 py-12 mx-auto">
       <div
-        class="
-          relative
-          z-10
-          flex flex-col
-          w-full
-          max-w-sm
-          p-8
-          bg-white
-          rounded-lg
-          shadow-md
-        "
+        class="relative z-10 flex flex-col w-full max-w-sm p-8 bg-white rounded-lg shadow-md "
       >
         <h2 class="mb-1 text-xl font-black text-gray-900 title-font">
           Create new user
@@ -38,35 +20,12 @@
             type="email"
             id="email"
             name="email"
-            class="
-              w-full
-              text-base
-              leading-8
-              text-gray-700
-              placeholder-transparent
-              transition-colors
-              duration-200
-              ease-in-out
-              bg-white
-              border-b border-gray-300
-              outline-none
-              peer
-              focus:ring-0
-            "
+            class="w-full text-base leading-8 text-gray-700 placeholder-transparent transition-colors duration-200 ease-in-out bg-white border-b border-gray-300 outline-none peer focus:ring-0 "
             placeholder="Email"
           />
           <label
             for="email"
-            class="
-              absolute
-              left-0
-              text-sm text-gray-600
-              transition-all
-              -top-3
-              peer-placeholder-shown:text-base
-              peer-placeholder-shown:text-gray-400
-              peer-placeholder-shown:top-1
-            "
+            class="absolute left-0 text-sm text-gray-600 transition-all -top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-1 "
             >Email</label
           >
         </div>
@@ -79,38 +38,13 @@
             type="password"
             id="password"
             name="password"
-            class="
-              w-full
-              px-3
-              py-1
-              text-base
-              leading-8
-              text-gray-700
-              transition-colors
-              duration-200
-              ease-in-out
-              bg-white
-              border border-gray-300
-              rounded
-              outline-none
-              focus:border-indigo-500
-              focus:ring-2 focus:ring-indigo-200
-            "
+            class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 "
           />
         </div>
 
         <button
           @click="createUser"
-          class="
-            px-6
-            py-2
-            text-lg text-white
-            bg-indigo-500
-            border-0
-            rounded
-            focus:outline-none
-            hover:bg-indigo-600
-          "
+          class="px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600 "
         >
           Create User
         </button>
@@ -123,17 +57,7 @@
     <!-- Read from firestore -->
     <div class="container flex justify-center px-5 py-12 mx-auto">
       <div
-        class="
-          relative
-          z-10
-          flex flex-col
-          w-full
-          max-w-sm
-          p-8
-          bg-white
-          rounded-lg
-          shadow-md
-        "
+        class="relative z-10 flex flex-col w-full max-w-sm p-8 bg-white rounded-lg shadow-md "
       >
         <h2 class="mb-1 text-xl font-black text-gray-900 title-font">
           Read from firestore
@@ -150,38 +74,13 @@
             type="text"
             id="collectionName"
             name="collectionName"
-            class="
-              w-full
-              px-3
-              py-1
-              text-base
-              leading-8
-              text-gray-700
-              transition-colors
-              duration-200
-              ease-in-out
-              bg-white
-              border border-gray-300
-              rounded
-              outline-none
-              focus:border-indigo-500
-              focus:ring-2 focus:ring-indigo-200
-            "
+            class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 "
           />
         </div>
 
         <button
           @click="readFromFirestore"
-          class="
-            px-6
-            py-2
-            text-lg text-white
-            bg-indigo-500
-            border-0
-            rounded
-            focus:outline-none
-            hover:bg-indigo-600
-          "
+          class="px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600 "
         >
           Get Collection
         </button>

@@ -99,7 +99,28 @@ css: [
   ],
 ```
 
+Scroll to top of page when it is loaded
+```
+<script>
+  export default {
+    scrollToTop: true
+  }
+</script>
 
+```
+
+Add Meta tags to the blog posts
+```
+import { defineComponent, useMeta } from '@nuxtjs/composition-api'
+
+export default defineComponent({
+    head: {},
+    setup() {
+        const { title } = useMeta()
+        title.value = 'My title'
+    },
+})
+```
 
 
 ## Build Setup
