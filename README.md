@@ -123,6 +123,22 @@ export default defineComponent({
 ```
 
 
+Clone the repository
+```
+git clone repositoryURL destinationName
+```
+List your existing remotes in order to get the name of the remote you want to change.
+```
+$ git remote -v
+> origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
+> origin  git@github.com:USERNAME/REPOSITORY.git (push)
+```
+Change your remote's URL from SSH to HTTPS with the git remote set-url command.
+```
+$ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+```
+
+
 ## Build Setup
 
 ```bash
