@@ -5,17 +5,18 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ["Montserrat","ui-sans-serif", "system-ui"],
+      sans: ["Lato","ui-sans-serif", "system-ui"],
       serif: ["Arvo", "ui-serif", "Georgia"],
       // mono: ["ui-monospace", "SFMono-Regular"],
       // display: ["Oswald"],
-      body: ["Montserrat"],
+      body: ["Lato"],
     },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       black: colors.black,
       blue: colors.cyan,
+      sky: colors.sky,
       white: colors.white,
       gray: colors.warmGray,
       green: colors.teal,

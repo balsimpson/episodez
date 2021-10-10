@@ -1,25 +1,180 @@
 <template>
-<div>
+  <div>
+    <!-- <div class="sticky top-0 z-50 bg-gray-800">
+      <div
+        class="flex items-center justify-between max-w-5xl p-4 mx-auto text-white "
+      >
+        <img src="logo_light.png" alt="" class="w-32" />
+        <div class="flex">
+          <NuxtLink to="/createlist">
+            <div
+              class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-blue-600 rounded-sm cursor-pointer hover:bg-blue-800 "
+            >
+              create list
+            </div>
+          </NuxtLink>
+          <ProfileDropdown />
+        </div>
+      </div>
+    </div> -->
 
-  <FirebasePlayground/>
+    <div class="text-gray-400 bg-gray-800">
+      <div class="max-w-5xl p-4 mx-auto">
+        <div class="grid grid-cols-3">
+          <div class="flex flex-col items-start justify-center">
+            <div class="font-serif text-3xl font-bold leading-7 capitalize">
+              Create and share episode playlists
+            </div>
+            <div class="mt-4 leading-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+              sequi.
+            </div>
+          </div>
+          <div class="">
+            <img src="couchsurfer.svg" alt="" />
+          </div>
+          <div class="flex flex-col justify-center space-y-2">
+            <div class="p-2 text-gray-700 bg-red-100 rounded">
+              <div class="font-bold">Pranking Is Fun</div>
+              <div class="text-xs">
+                8 Episodes from Brooklyn Nine Nine, Parks and Recreations and
+                The Office
+              </div>
+            </div>
 
-  <button @click="showToast">Toast</button>
-</div>
+            <div class="p-2 text-gray-700 bg-red-100 rounded">
+              <div class="font-bold">Pranking Is Fun</div>
+              <div class="text-xs">
+                8 Episodes from Brooklyn Nine Nine, Parks and Recreations and
+                The Office
+              </div>
+            </div>
+
+            <div class="p-2 text-gray-700 bg-red-100 rounded">
+              <div class="font-bold">Pranking Is Fun</div>
+              <div class="text-xs">
+                8 Episodes from Brooklyn Nine Nine, Parks and Recreations and
+                The Office
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3">
+      <ComponentsPlaygroundNew />
+    </div>
+
+
+  </div>
 </template>
 
 <script>
-import { ref, useContext } from "@nuxtjs/composition-api";
+import tmdb from "assets/js/useTmdbApi";
+import { ref, onMounted } from "@nuxtjs/composition-api";
+import store from "~/store";
+import SearchBar from "~/components/SearchBar.vue";
+import ShowSearchResults from "~/components/ShowSearchResults.vue";
+import BaseModal from "~/components/BaseModal.vue";
+import SortableTableTransitions from "~/components/SortableTableTransitions.vue";
+import ListPublisher from "~/components/ListPublisher.vue";
+import ProfileDropdown from "~/components/ProfileDropdown.vue";
+import ComponentsPlayground from "../../episodez-nuxt/components/ComponentsPlayground.vue";
 export default {
-  setup() {
-    const { $toast } = useContext();
-    const showToast = () => {
-      $toast.show('Successfully toasted!', {
-        className: ["text-blue-500"]
-      }).goAway(40000)
-    }
-  
-  
-    return { showToast }
-  }
-}
+  head: {
+    script: [
+      {
+        src: "https://kit.fontawesome.com/34356f09a5.js",
+        defer: true,
+      },
+    ],
+  },
+  components: {
+    SearchBar,
+    ShowSearchResults,
+    BaseModal,
+    SortableTableTransitions,
+    ListPublisher,
+    ProfileDropdown,
+    ComponentsPlayground,
+  },
+  setup(props, { emit }) {
+    // const modalItem = ref();
+    // const modalIsActive = ref(false);
+    // const modalSeasonNumber = ref(0);
+
+    // const newList = ref([]);
+    // const searchResults = ref([]);
+
+    onMounted(() => {
+      console.log("user", store.state.user);
+    });
+
+    // const doSearch = async (val) => {
+    //   // console.log("val", val);
+    //   try {
+    //     let results = await tmdb.search(val);
+    //     searchResults.value = results.results;
+    //   } catch (error) {
+    //     console.log("error", error);
+    //   }
+    // };
+
+    // const clickHandler = async (e) => {
+    //   modalItem.value = await tmdb.getFormattedShowDetails(e.id, 1);
+    //   modalIsActive.value = !modalIsActive.value;
+    //   // console.log("modalItem", modalItem.value);
+    // };
+
+    
+
+    const getSeason = async (seasonNumber) => {
+      // console.log("seasonNumber", seasonNumber, modalItem.value);
+
+      let res = await tmdb.getEpisodes(modalItem.value.id, seasonNumber);
+
+      if (seasonNumber && seasonNumber > 0) {
+        modalSeasonNumber.value = seasonNumber - 1;
+      } else {
+        modalSeasonNumber.value = seasonNumber;
+      }
+      modalItem.value.seasons[modalSeasonNumber.value].episodes = res.episodes;
+      // modalItem.seasons[modalSeasonNumber]
+      console.log("res", modalItem.value.seasons[modalSeasonNumber.value]);
+    };
+
+    const checkIfAlreadyInList = (val) => {
+      // console.log("checkIfAlreadyInList", val);
+      let found = false;
+
+      for (const key in newList.value) {
+        // console.log('item', item);
+        if (newList.value[key].id == val) {
+          found = true;
+        }
+      }
+
+      return found;
+    };
+
+    return {
+      tmdb,
+      // doSearch,
+      // clickHandler,
+      // modalItem,
+      // modalIsActive,
+      // addToList,
+      // newList,
+      // searchResults,
+      getSeason,
+      // removeFromList,
+      checkIfAlreadyInList,
+      // modalSeasonNumber,
+    };
+  },
+};
 </script>
+
+<style>
+</style>
