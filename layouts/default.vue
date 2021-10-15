@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="sticky top-0 z-50 bg-gray-800">
+  <div :class="[currentTheme == 'dark' ? 'dark' : '']">
+    <div class="sticky top-0 z-50 bg-gray-200 dark:bg-gray-800">
       <div
         class="flex items-center justify-between max-w-5xl p-4 mx-auto text-white "
       >
@@ -16,7 +16,12 @@
               create list
             </div>
           </NuxtLink>
-          <ProfileDropdown />
+          <ProfileDropdown>
+            <!-- Switch theme -->
+            <template #themeSwitcher>
+              <ThemeSwitcher @switchTheme="clickHandler" />
+            </template>
+          </ProfileDropdown>
         </div>
       </div>
     </div>
@@ -25,6 +30,55 @@
       <Nuxt />
     </div>
 
-    <BaseFooter  />
+    <!-- <BaseFooter  /> -->
   </div>
 </template>
+
+<script>
+import { ref, onMounted } from "@nuxtjs/composition-api";
+export default {
+  setup(props, { emit }) {
+    const currentTheme = ref("");
+
+    onMounted(() => {
+      if (localStorage.theme == "dark") {
+        console.log('if true', localStorage.theme);
+        currentTheme.value = "dark";
+      } else {
+        console.log('else', localStorage.theme);
+        if (
+        localStorage.theme != "light" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+       {
+          currentTheme.value = "dark";
+          localStorage.theme = currentTheme.value;
+        } else {
+          currentTheme.value = localStorage.theme;
+        }
+      }
+
+      // if (
+      //   localStorage.theme ||
+      //   (!("theme" in localStorage) &&
+      //     window.matchMedia("(prefers-color-scheme: dark)").matches)
+      // ) {
+      //   isDarkMode.value = true;
+      //   localStorage.theme = isDarkMode.value;
+      // } else {
+      //   isDarkMode.value = localStorage.theme;
+      // }
+      console.log("dafault-localStorage.theme", localStorage.theme);
+    });
+
+    const clickHandler = (val) => {
+      currentTheme.value = val;
+      console.log('clicked', val);
+    };
+
+    return { currentTheme, clickHandler };
+  },
+};
+</script>
+
+<style>
+</style>

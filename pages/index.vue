@@ -1,27 +1,10 @@
 <template>
   <div>
-    <!-- <div class="sticky top-0 z-50 bg-gray-800">
-      <div
-        class="flex items-center justify-between max-w-5xl p-4 mx-auto text-white "
-      >
-        <img src="logo_light.png" alt="" class="w-32" />
-        <div class="flex">
-          <NuxtLink to="/createlist">
-            <div
-              class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-blue-600 rounded-sm cursor-pointer hover:bg-blue-800 "
-            >
-              create list
-            </div>
-          </NuxtLink>
-          <ProfileDropdown />
-        </div>
-      </div>
-    </div> -->
 
     <div class="text-gray-400 bg-gray-800">
       <div class="max-w-5xl p-4 mx-auto">
-        <div class="grid grid-cols-3">
-          <div class="flex flex-col items-start justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+          <div class="flex flex-col items-start justify-center text-center md:text-left">
             <div class="font-serif text-3xl font-bold leading-7 capitalize">
               Create and share episode playlists
             </div>
@@ -72,7 +55,7 @@
 
 <script>
 import tmdb from "assets/js/useTmdbApi";
-import { ref, onMounted } from "@nuxtjs/composition-api";
+import { ref, onMounted, useContext } from "@nuxtjs/composition-api";
 import store from "~/store";
 import SearchBar from "~/components/SearchBar.vue";
 import ShowSearchResults from "~/components/ShowSearchResults.vue";
@@ -100,6 +83,7 @@ export default {
     ComponentsPlayground,
   },
   setup(props, { emit }) {
+    const { $fire } = useContext();
     // const modalItem = ref();
     // const modalIsActive = ref(false);
     // const modalSeasonNumber = ref(0);
@@ -107,9 +91,27 @@ export default {
     // const newList = ref([]);
     // const searchResults = ref([]);
 
-    onMounted(() => {
-      console.log("user", store.state.user);
+    onMounted(async () => {
+      // let res = await readFromFirestore("lists");
+      // console.log("res", res, res.length);
     });
+
+    const readFromFirestore = async (collectionName) => {
+      const lists = $fire.firestore.collection(collectionName);
+      const items = [];
+      try {
+        const docs = await lists.get();
+        docs.forEach((doc) => {
+          items.push(doc.data());
+          // console.log("doc", doc.data());
+        });
+        return JSON.stringify(items);
+      } catch (error) {
+        console.log("error", error);
+        readFromFirestoreMsg.value = error.message;
+        return;
+      }
+    };
 
     // const doSearch = async (val) => {
     //   // console.log("val", val);

@@ -4,10 +4,10 @@
         class="list-group"
         tag="ul"
         handle=".handle"
-        v-model="list"
+        v-model="items"
         v-bind="dragOptions"
         @start="drag = true"
-        @end="drag = false"
+        @end="dragEnd"
       >
         <transition-group type="transition" :name="!drag ? 'flip-list' : null">
           <slot name="list"></slot>
@@ -21,9 +21,7 @@ import tmdb from "assets/js/useTmdbApi";
 import draggable from "vuedraggable";
 import { ref, onMounted } from "@nuxtjs/composition-api";
 export default {
-  props: ["items"],
-  name: "transition-example-2",
-  display: "Transitions",
+  props:["items"],
   components: {
     draggable,
   },
@@ -36,11 +34,17 @@ export default {
       ghostClass: "ghost",
     };
 
+    const dragEnd = () => {
+      console.log('list', list.value);
+      emit("dragEnd"),
+      drag.value = false;
+    }
+
     onMounted(() => {
       list.value = props.items;
     });
 
-    return { drag, dragOptions, list, tmdb };
+    return { drag, dragOptions, list, tmdb, dragEnd };
   },
 };
 </script>

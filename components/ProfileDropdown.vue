@@ -7,7 +7,7 @@
     <transition name="slide-in-up">
       <div
         v-if="showDropdown"
-        class="absolute right-0 text-gray-700 bg-white border rounded shadow-lg top-8 "
+        class="absolute right-0 text-gray-700 bg-white border rounded shadow-lg w-44 top-8"
       >
         <div class="divide-y divide-gray-200">
           <div
@@ -47,6 +47,7 @@
             </svg>
             <div class="ml-2 text-sm font-bold uppercase">Favorites</div>
           </div>
+          
           <div
             @click="selectOption"
             class="flex items-center px-3 py-2 cursor-pointer hover:text-red-700 "
@@ -65,6 +66,11 @@
             </svg>
             <div class="ml-2 text-sm font-bold uppercase">Logout</div>
           </div>
+
+          <slot name="themeSwitcher">
+
+          </slot>
+          
         </div>
       </div>
     </transition>
@@ -82,8 +88,9 @@
 import { ref } from "@nuxtjs/composition-api";
 import BaseDropdown from "./BaseDropdown.vue";
 import FontAwesomeIcon from "./FontAwesomeIcon.vue";
+import ThemeSwitcher from './ThemeSwitcher.vue';
 export default {
-  components: { BaseDropdown, FontAwesomeIcon },
+  components: { BaseDropdown, FontAwesomeIcon, ThemeSwitcher },
   setup(props, { emit }) {
     const showDropdown = ref(false);
 

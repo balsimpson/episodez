@@ -4,7 +4,7 @@
       <button
         @click.prevent="clickHandler"
         type="button"
-        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-brand-green-500 "
+        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-red-500 "
         id="menu-button"
         aria-expanded="true"
         aria-haspopup="true"
@@ -50,7 +50,7 @@
         <a
           @click.prevent="optionSelect(item)"
           href="#"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-300"
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
           role="menuitem"
           tabindex="-1"
           id="menu-item-0"

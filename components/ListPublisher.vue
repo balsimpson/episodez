@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div v-if="step1"
+    <div
+      v-if="step1"
       class="flex flex-col items-center p-6 mb-4 text-center bg-white border rounded-lg shadow-lg sm:flex-row sm:justify-between sm:text-left "
     >
       <div>
-        <h1 class="text-xl font-medium text-gray-700">14 Episodes | 4 Shows</h1>
+        <h1 class="text-xl font-medium text-gray-700">
+          {{ items.length }} {{ items.length == 1 ? "Episode" : "Episodes" }} |
+          {{ shows }} {{ shows == 1 ? "Show" : "Shows" }}
+        </h1>
         <p class="text-gray-600">Click on the next button to proceed.</p>
       </div>
 
       <button
-      @click="step1=!step1"
+        @click="step1 = !step1"
         class="px-8 py-2 mt-2 text-white bg-red-600 rounded-full sm:mt-0 hover:opacity-75 "
       >
         Next
@@ -57,14 +61,42 @@
 </template>
 
 <script>
-import { ref } from "@nuxtjs/composition-api";
+import { computed, onMounted, ref, watchEffect } from "@nuxtjs/composition-api";
 export default {
-    setup(props, { emit }) {
-        const step1 = ref(true)
+  props: ["items"],
+  setup(props, { emit }) {
+    const step1 = ref(true);
+    const shows = ref();
     
-    
-        return { step1 }
-    }
+    const groupByProp = (items, prop) => {
+      const groups = {};
+      items.map((item) => {
+        if (groups[item[prop]]) {
+          groups[item[prop]].push(item);
+        } else {
+          groups[item[prop]] = [item];
+        }
+      });
+
+      return groups;
+    };
+
+    watchEffect(() => {
+      if (props.items && props.items.length) {
+        let grouped = groupByProp(props.items, "show_id");
+        console.log('shows', grouped, shows.value);
+        shows.value = Object.keys(grouped).length;
+      }
+    });
+
+    // onMounted(() => {
+    //   if (props.items && props.items.length) {
+    //     shows.value = groupByProp(props.items, "show_id");
+    //   }
+    // });
+
+    return { step1, shows };
+  },
 };
 </script>
 

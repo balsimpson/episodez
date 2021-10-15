@@ -1,43 +1,48 @@
 <template>
-  <div>
+  <div class="dark:bg-blue-200">
     <div class="max-w-5xl p-4 mx-auto">
+      <h2 class="mt-8 mb-2 text-xs font-semibold tracking-widest text-center text-gray-500 uppercase title-font">Search for a TV Show</h2>
+      <h1 class="w-4/5 mx-auto mb-12 text-2xl font-semibold leading-none tracking-tighter text-center text-gray-600 sm:w-1/2 sm:text-4xl title-font"> A Long headline to switch your visitors into users. </h1>
+      
       <SearchBar @query="doSearch" placeholder="Try 'The Office'" />
-      <ShowSearchResults v-if="searchResults" :results="searchResults" @clicked="clickHandler" />
+      
+      <ShowSearchResults v-if="searchResults" :results="searchResults" :queryString="queryString" @clicked="clickHandler" />
 
-      <ListPublisher v-if="newList.length" />
+      <ListPublisher v-if="newList.length" :items="newList" />
 
       <div v-if="newList.length">
-        <SortableTableTransitions>
+        <SortableTableTransitions @dragEnd="tableSorted">
           <template #list>
             <li
-              class="flex justify-between p-3 my-2 text-gray-700 border border-gray-300 rounded "
+              class="flex justify-between p-3 my-2 text-gray-700 bg-white border border-gray-300 rounded"
               v-for="(item, index) in newList"
               :key="item.id"
             >
-              <div class="flex flex-col w-full sm:flex-row">
-                <div class="w-6 h-6 text-center border rounded-full">
+              <div class="flex w-full ">
+                <!-- <div class="w-6 h-6 text-center border rounded-full">
                   {{ index + 1 }}
-                </div>
+                </div> -->
                 <div>
-                  <div class="flex">
+                  <div class="flex flex-col sm:flex-row">
                     <div class="w-full pl-2 sm:w-1/4">
                       <img
-                        :src="tmdb.getImageURL(item.still_path)"
+                        :src="tmdb.getImageURL(item.still_path, 'w500')"
                         alt=""
-                        class="object-cover w-full border rounded shadow-lg max-h-24 "
+                        class="object-cover w-full border rounded shadow-lg max-h-36 "
                       />
                     </div>
-                    <div class="px-4 text-left sm:pt-0 sm:w-3/4">
+                    <div class="px-4 pt-2 text-left sm:pt-0 sm:w-3/4">
                       <!-- <div class="flex justify-between pb-1"> -->
                       <div class="text-xl font-bold leading-none">
                         {{ item.name }}
                       </div>
-                      <div class="text-sm">
+                      <div class="text-sm font-bold text-red-600">
                         {{ item.show_name }}
-                        <span
-                          >S{{ item.season_number }}E{{
-                            item.episode_number
-                          }}</span
+                        <span class="px-1 ml-1 text-xs border border-red-500 rounded-full"
+                          >
+                          <span class="font-bold text-gray-500">S</span><span class="font-bold text-gray-500">{{ item.season_number }}</span><span class="font-bold text-gray-500">E</span><span class="font-bold text-gray-500">{{ item.episode_number }}</span>
+                          
+                        </span
                         >
                       </div>
                       <!-- </div> -->
@@ -134,14 +139,15 @@
         <div class="flex flex-col w-full sm:flex-row">
           <div class="px-2 pt-2 sm:w-1/4">
             <img
-              :src="tmdb.getImageURL(modalItem.poster_path, 'w500')"
+              
+              :src="tmdb.getImageURL(modalItem.seasons[modalSeasonNumber].poster_path, 'w500')"
               alt=""
-              class="border rounded shadow-lg"
+              class="border rounded shadow-lg max-h-72"
             />
           </div>
           <div class="w-full px-2 text-left sm:w-3/4">
             <div class="text-3xl font-bold">{{ modalItem.name }}</div>
-            <div class="text-base">{{ modalItem.overview }}</div>
+            <div class="text-base">{{ modalItem.seasons[modalSeasonNumber].overview }}</div>
             <BaseDropdown
               @selected="getSeason"
               :btnText="modalItem.seasons[modalSeasonNumber].name"
@@ -184,15 +190,15 @@
                   <div v-if="!checkIfAlreadyInList(item.id)">
                     <div
                       @click="addToList(item)"
-                      class="h-6 px-2 py-1 text-xs text-white uppercase bg-black rounded cursor-pointer min-w-24 "
+                      class="flex-shrink-0 h-6 px-2 py-1 text-xs text-white uppercase bg-black rounded cursor-pointer min-w-24"
                     >
                       Add to list
                     </div>
                   </div>
-                  <div v-else>
+                  <div v-else class="flex-shrink-0 ">
                     <div
                       @click="removeFromList(item.id)"
-                      class="inline-flex items-center flex-shrink-0 h-6 px-2 py-1 text-xs text-white uppercase bg-black rounded cursor-pointer "
+                      class="h-6 px-2 py-1 text-xs text-white uppercase bg-black rounded cursor-pointer min-w-24 "
                     >
                       remove from list
                     </div>
@@ -214,6 +220,7 @@ import { ref, onMounted } from "@nuxtjs/composition-api";
 export default {
   setup(props, { emit }) {
     const newList = ref([]);
+    const queryString = ref("");
     const searchResults = ref([]);
 
     const modalItem = ref();
@@ -222,8 +229,11 @@ export default {
 
     const doSearch = async (val) => {
       // console.log("val", val);
+      modalSeasonNumber.value = 0;
       try {
         let results = await tmdb.search(val);
+        queryString.value = val;
+        console.log('results', results);
         searchResults.value = results.results;
       } catch (error) {
         console.log("error", error);
@@ -235,7 +245,7 @@ export default {
       data.show_name = modalItem.value.name;
       data.show_poster_path = modalItem.value.poster_path;
       newList.value.push(data);
-      console.log("data", newList.value);
+      // console.log("data", newList.value);
     };
 
     const removeFromList = (val) => {
@@ -280,9 +290,14 @@ export default {
       return found;
     };
 
+    const tableSorted = (val) => {
+      console.log('sorted', newList.value);
+    }
+
     const clickHandler = async (e) => {
       modalItem.value = await tmdb.getFormattedShowDetails(e.id, 1);
       modalIsActive.value = !modalIsActive.value;
+      searchResults.value = [];
       // console.log("modalItem", modalItem.value);
     };
 
@@ -293,12 +308,14 @@ export default {
       modalItem,
       modalIsActive,
       doSearch,
+      queryString,
       getSeason,
       checkIfAlreadyInList,
       clickHandler,
       addToList,
       removeFromList,
       modalSeasonNumber,
+      tableSorted
     };
   },
 };

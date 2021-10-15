@@ -1,5 +1,6 @@
 <template>
-  <div class="w-full my-2">
+  <div class="max-w-xl mx-auto my-2">
+    <div v-if="results.length" class="py-2 text-center">Found {{results.length}} results for {{queryString}}</div>
     <div class="flex space-x-1 overflow-scroll">
       <!-- <transition-group name="slide-in-up"> -->
         <div v-for="item in results" :key="item.id">
@@ -18,7 +19,7 @@
 import BaseCardImg from "./BaseCardImg.vue";
 export default {
   components: { BaseCardImg },
-  props: ["results"],
+  props: ["results", "queryString"],
   setup(props, { emit }) {
     const result = [
       {
