@@ -1,17 +1,18 @@
 <template>
-  <div :class="[currentTheme == 'dark' ? 'dark' : '']">
-    <div class="sticky top-0 z-50 bg-gray-200 dark:bg-gray-800">
+  <div :class="[currentTheme == 'dark' ? 'dark' : '']" class="">
+    <div class="sticky top-0 z-50 transition-colors duration-200 bg-gray-200 shadow-lg dark:bg-gray-800">
       <div
         class="flex items-center justify-between max-w-5xl p-4 mx-auto text-white "
       >
         <NuxtLink to="/">
-          <img src="logo_light.png" alt="episodez logo" class="w-32" />
+          <img v-if="currentTheme == 'dark'" src="/logo_light.png" alt="episodez logo" class="w-32" />
+          <img v-else src="/logo_dark.png" alt="episodez logo" class="w-32" />
         </NuxtLink>
 
         <div class="flex">
           <NuxtLink to="/createlist">
             <div
-              class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-red-500 rounded-sm cursor-pointer hover:bg-red-900 "
+              class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-red-500 rounded-sm cursor-pointer hover:bg-red-900 dark:hover:bg-red-600"
             >
               create list
             </div>
@@ -42,10 +43,10 @@ export default {
 
     onMounted(() => {
       if (localStorage.theme == "dark") {
-        console.log('if true', localStorage.theme);
+        // console.log('if true', localStorage.theme);
         currentTheme.value = "dark";
       } else {
-        console.log('else', localStorage.theme);
+        // console.log('else', localStorage.theme);
         if (
         localStorage.theme != "light" &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -67,7 +68,7 @@ export default {
       // } else {
       //   isDarkMode.value = localStorage.theme;
       // }
-      console.log("dafault-localStorage.theme", localStorage.theme);
+      // console.log("dafault-localStorage.theme", localStorage.theme);
     });
 
     const clickHandler = (val) => {

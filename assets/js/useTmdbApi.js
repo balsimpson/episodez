@@ -8,41 +8,41 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 /*
 "backdrop_sizes": [
-      "w300",
-      "w780",
-      "w1280",
-      "original"
-    ],
-    "logo_sizes": [
-      "w45",
-      "w92",
-      "w154",
-      "w185",
-      "w300",
-      "w500",
-      "original"
-    ],
-    "poster_sizes": [
-      "w92",
-      "w154",
-      "w185",
-      "w342",
-      "w500",
-      "w780",
-      "original"
-    ],
-    "profile_sizes": [
-      "w45",
-      "w185",
-      "h632",
-      "original"
-    ],
-    "still_sizes": [
-      "w92",
-      "w185",
-      "w300",
-      "original"
-    ]
+	  "w300",
+	  "w780",
+	  "w1280",
+	  "original"
+	],
+	"logo_sizes": [
+	  "w45",
+	  "w92",
+	  "w154",
+	  "w185",
+	  "w300",
+	  "w500",
+	  "original"
+	],
+	"poster_sizes": [
+	  "w92",
+	  "w154",
+	  "w185",
+	  "w342",
+	  "w500",
+	  "w780",
+	  "original"
+	],
+	"profile_sizes": [
+	  "w45",
+	  "w185",
+	  "h632",
+	  "original"
+	],
+	"still_sizes": [
+	  "w92",
+	  "w185",
+	  "w300",
+	  "original"
+	]
 */
 
 // const BACKDROP_SIZES = ["w300", "w780", "w1280", "original"];
@@ -54,7 +54,7 @@ const tmdb = {
 		return await doFetch(url);
 	},
 
-	async getEpisodes(showId, seasonNo=1) {
+	async getEpisodes(showId, seasonNo = 1) {
 		let url = `${BASE_URL}/tv/${showId}/season/${seasonNo}?${API_KEY}`;
 		return await doFetch(url);
 	},
@@ -64,7 +64,7 @@ const tmdb = {
 		return await doFetch(url);
 	},
 
-	async getFormattedShowDetails(showId, seasonNo=1) {
+	async getFormattedShowDetails(showId, seasonNo = 1) {
 
 		let showDetails = await doFetch(`${BASE_URL}/tv/${showId}?${API_KEY}`);
 		let episodes = await doFetch(`${BASE_URL}/tv/${showId}/season/${seasonNo}?${API_KEY}`);
@@ -84,7 +84,7 @@ const tmdb = {
 		if (specials) {
 			seasons.push(specials);
 		}
-		
+
 		let show = {
 			id: showDetails.id,
 			name: showDetails.name,
@@ -101,7 +101,7 @@ const tmdb = {
 			homepage: showDetails.homepage,
 		}
 
-		show.seasons[seasonNo-1].episodes = episodes.episodes;
+		show.seasons[seasonNo - 1].episodes = episodes.episodes;
 		return show;
 	},
 
@@ -146,12 +146,18 @@ const tmdb = {
 		return genretxt;
 	},
 
-	getImageURL(poster_path, size="w154") {
+	getImageURL(poster_path, type, size = "w154") {
 		if (poster_path) {
 			return `https://image.tmdb.org/t/p/${size}${poster_path}`;
-		  } else {
-			return "imgnotfound.png";
-		  }
+		} else {
+			if (type == 'portrait') {
+
+				return "imgnotfound_portrait.png";
+			} else {
+
+				return "imgnotfound.png";
+			}
+		}
 	},
 
 	// format tv show details

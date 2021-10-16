@@ -1,8 +1,8 @@
 <template>
-  <div class="dark:bg-blue-200">
+  <div class="min-h-screen dark:bg-gray-700">
     <div class="max-w-5xl p-4 mx-auto">
-      <h2 class="mt-8 mb-2 text-xs font-semibold tracking-widest text-center text-gray-500 uppercase title-font">Search for a TV Show</h2>
-      <h1 class="w-4/5 mx-auto mb-12 text-2xl font-semibold leading-none tracking-tighter text-center text-gray-600 sm:w-1/2 sm:text-4xl title-font"> A Long headline to switch your visitors into users. </h1>
+      <h2 class="mt-8 mb-2 text-xs font-semibold tracking-widest text-center text-gray-500 uppercase title-font">create a new playlist</h2>
+      <h1 class="w-4/5 mx-auto mb-12 text-xl font-semibold leading-none tracking-tighter text-center text-gray-600 dark:text-gray-400 sm:w-1/2 title-font"> A Long headline to switch your visitors into users. </h1>
       
       <SearchBar @query="doSearch" placeholder="Try 'The Office'" />
       
@@ -116,11 +116,11 @@
           </svg>
           <div class="mt-4">
             <h2
-              class="mb-8 text-xs font-semibold tracking-widest text-gray-800 uppercase title-font "
+              class="mb-8 text-xs font-semibold tracking-widest text-gray-800 uppercase dark:text-gray-300 title-font "
             >
               Your list is empty
             </h2>
-            <div class="text-sm text-gray-400">
+            <div class="text-sm text-gray-400 dark:text-gray-500">
               To add an episode to the list, use the search bar <br />to find a TV Show
             </div>
           </div>

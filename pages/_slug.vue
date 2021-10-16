@@ -1,21 +1,5 @@
 <template>
   <div>
-    <div class="sticky top-0 z-50 bg-gray-800">
-      <div
-        class="flex items-center justify-between max-w-5xl p-4 mx-auto text-white "
-      >
-        <img src="logo_light.png" alt="" class="w-32" />
-        <div class="flex">
-          <div
-            class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-blue-600 rounded-sm cursor-pointer hover:bg-blue-800 "
-          >
-            create list
-          </div>
-          <ProfileDropdown />
-        </div>
-      </div>
-    </div>
-
     <div
       class="flex flex-col items-start max-w-5xl p-4 mx-auto md:flex-row md:items-end "
     >

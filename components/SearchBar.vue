@@ -5,12 +5,12 @@
         v-model="query"
         type="text"
         :placeholder="placeholder"
-        class="w-full px-3 py-3 font-bold text-red-500 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+        class="w-full px-3 py-3 font-bold text-red-500 border-2 rounded-lg dark:text-red-200 focus:outline-none focus:ring-1 focus:ring-red-500 dark:bg-gray-600 dark:border-gray-500"
       />
       <div class="absolute inset-y-0 right-0">
         <div
           @click.prevent="clickHandler"
-          class="flex items-center h-full px-4 text-red-500 transition cursor-pointer hover:text-red-700 "
+          class="flex items-center h-full px-4 text-red-500 transition cursor-pointer hover:text-red-700 dark:hover:text-red-200 "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -21,7 +21,7 @@
 import { ref, onMounted, computed } from "@nuxtjs/composition-api";
 export default {
   setup(props, { emit }) {
-    const currentTheme = ref("");
+    const currentTheme = ref("light");
     const isDarkMode = ref(false);
     const switchTheme = (e) => {
       if (e.target.checked) {
@@ -39,11 +39,11 @@ export default {
     onMounted(() => {
       
       if (localStorage.theme == "dark") {
-        console.log('if true', localStorage.theme);
+        // console.log('if true', localStorage.theme);
         currentTheme.value = "dark";
         isDarkMode.value = true;
       } else {
-        console.log('else', localStorage.theme);
+        // console.log('else', localStorage.theme);
         if (
         localStorage.theme != "light" &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -56,7 +56,7 @@ export default {
         }
       }
 
-      console.log("themeSwitcher-localStorage.theme", localStorage.theme);
+      // console.log("themeSwitcher-localStorage.theme", localStorage.theme);
 
     });
 

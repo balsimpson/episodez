@@ -6,7 +6,7 @@
     <div class="relative flex-none w-32 h-48">
       
         <img
-          :src="tmdb.getImageURL(item.poster_path)"
+          :src="tmdb.getImageURL(item.poster_path, 'portrait')"
           alt=""
           class="object-cover w-full h-full rounded"
         />

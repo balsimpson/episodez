@@ -2,7 +2,7 @@
   <div class="relative">
     <div
       @click="showDropdown = !showDropdown"
-      class="w-6 h-6 bg-red-500 rounded-full cursor-pointer"
+      class="w-6 h-6 bg-red-500 rounded-full cursor-pointer hover:ring-2 ring-red-300 "
     ></div>
     <transition name="slide-in-up">
       <div

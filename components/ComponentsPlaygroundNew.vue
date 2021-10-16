@@ -1,12 +1,8 @@
 <template>
   <div class="max-w-5xl mx-auto text-center">
 
-    <div class="mt-8">
-      <div class="grid gap-2 pb-2 lg:grid-cols-3 sm:grid-cols-2">
-        <BaseCardWithList />
-        <BaseCardWithList />
-        <BaseCardWithList />
-      </div>
+    <div class="mt-4">
+      
 
 
 
