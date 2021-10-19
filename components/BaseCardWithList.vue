@@ -37,7 +37,7 @@
         <span class="flex-shrink-0 ml-2 text-sm font-semibold tracking-widest uppercase dark:text-gray-500 title-font">4 shares</span>
       </div>
       <div class="flex items-center justify-center w-full">
-        <FontAwesomeIcon icon="comment-dots" class="text-gray-300 " />
+        <FontAwesomeIcon :icon="['fas', 'envelope']" class="text-gray-300 " />
         <span class="flex-shrink-0 ml-2 text-sm font-semibold tracking-widest uppercase dark:text-gray-500 title-font">17 comments</span>
       </div>
       

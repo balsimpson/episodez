@@ -1,6 +1,11 @@
 <template>
-  <div class="max-w-3xl p-4 mx-auto">
-    <SectionHeader title="comments" highlighted="" icon="comments" class="mb-4"/>
+  <div class="max-w-3xl p-4">
+    <SectionHeader
+      title="comments"
+      highlighted="list"
+      icon="comments"
+      class="mb-4"
+    />
     <AppCommentsAdd />
     <!-- comment -->
     <AppCommentItem />
@@ -11,15 +16,13 @@
         <AppCommentItem :isReply="true" />
         <AppCommentItem :isReply="true" />
         <AppCommentItem :isReply="true" />
-    </template>
+      </template>
     </AppCommentItem>
   </div>
 </template>
 
 <script>
-export default {
-  
-};
+export default {};
 </script>
 
 <style>

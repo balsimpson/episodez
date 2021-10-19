@@ -1,7 +1,7 @@
 <template>
   <div class="relative max-w-5xl mx-auto">
     <h3
-      class="relative w-auto pb-3 text-3xl font-semibold leading-none tracking-tighter text-left text-gray-600 capitalize border-b border-gray-400 border-dotted dark:text-gray-400 title-font dark:border-gray-600"
+      class="relative w-auto pb-3 text-3xl font-semibold leading-none tracking-tighter text-left text-gray-600 capitalize border-b border-gray-400 border-dotted dark:text-gray-400 title-font dark:border-gray-600 "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,17 +36,17 @@
         <circle cx="249" cy="17" r="17" fill="currentColor" />
       </svg>
       <FontAwesomeIcon :icon="icon" class="mr-2" />
-      {{title}} <span class="text-red-500">{{highlighted}}</span>
+
+      {{ title }} <span class="text-red-500">{{ highlighted }}</span>
     </h3>
   </div>
 </template>
 
 <script>
 export default {
-    props:["title", "highlighted", "icon"],
+  props: ["title", "highlighted", "icon"],
 };
 </script>
 
 <style>
 </style>
-FontAwesomeIcon

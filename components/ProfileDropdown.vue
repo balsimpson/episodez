@@ -87,7 +87,7 @@
 <script>
 import { ref } from "@nuxtjs/composition-api";
 import BaseDropdown from "./BaseDropdown.vue";
-import FontAwesomeIcon from "./FontAwesomeIcon.vue";
+import FontAwesomeIcon from "./FontAwesomeIcon1.vue";
 import ThemeSwitcher from './ThemeSwitcher.vue';
 export default {
   components: { BaseDropdown, FontAwesomeIcon, ThemeSwitcher },

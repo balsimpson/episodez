@@ -14,12 +14,47 @@ const actions = {
 
   // sign in
   async signIn(state, {inputEmail, inputPassword}) {
-    let res = await this.$fire.auth.signInWithEmailAndPassword(
-      inputEmail,
-      inputPassword
-    );
-    console.log('res', res);
-    return res;
+    // console.log('signin', inputEmail, inputPassword);
+    try {
+      let res = await this.$fire.auth.signInWithEmailAndPassword(
+        inputEmail,
+        inputPassword
+      );
+      console.log('res', res);
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
+
+  // google sign in
+  async googleSignIn(state) {
+    try {
+      let provider = new this.$fireModule.auth.GoogleAuthProvider();
+      provider.addScope('https://www.googleapis.com/auth/userinfo.email');
+      let res = await this.$fire.auth.signInWithPopup(
+        provider
+      );
+      console.log('res', res);
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
+
+  // github sign in
+  async githubSignIn(state) {
+    // console.log('signin', new $fire.auth.GoogleAuthProvider());
+    try {
+      let provider = new this.$fireModule.auth.GithubAuthProvider();
+      let res = await this.$fire.auth.signInWithPopup(
+        provider
+      );
+      console.log('res', res);
+      return res;
+    } catch (error) {
+      return error;
+    }
   },
 
   // sign out

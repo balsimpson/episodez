@@ -33,8 +33,17 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
+    '@nuxtjs/fontawesome',
   ],
+
+  fontawesome: {
+    icons: {
+      solid: true,
+      regular: true,
+      brands: true
+    }
+  },
 
   // router
   router: {

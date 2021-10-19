@@ -131,6 +131,15 @@
     <!-- <AppModal /> -->
 
     <BaseModal
+      @clicked="showLogin = !showLogin"
+      :isActive="showLogin"
+    >
+      <template #header>
+        <LoginForm />
+      </template>
+    </BaseModal>
+    
+    <BaseModal
       @clicked="modalIsActive = !modalIsActive"
       :item="modalItem"
       :isActive="modalIsActive"
@@ -225,6 +234,7 @@ export default {
 
     const modalItem = ref();
     const modalIsActive = ref(false);
+    const showLogin = ref(true);
     const modalSeasonNumber = ref(0);
 
     const doSearch = async (val) => {
@@ -315,7 +325,8 @@ export default {
       addToList,
       removeFromList,
       modalSeasonNumber,
-      tableSorted
+      tableSorted,
+      showLogin
     };
   },
 };

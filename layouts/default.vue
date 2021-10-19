@@ -12,7 +12,7 @@
         <div class="flex">
           <NuxtLink to="/createlist">
             <div
-              class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-red-500 rounded-sm cursor-pointer hover:bg-red-900 dark:hover:bg-red-600"
+              class="px-2 py-1 mr-2 text-xs font-bold uppercase transition bg-red-500 rounded-sm cursor-pointer hover:bg-red-800 dark:hover:bg-red-600"
             >
               create list
             </div>
