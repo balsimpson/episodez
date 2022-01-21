@@ -38,6 +38,19 @@
 <script>
 import { ref, onMounted } from "@nuxtjs/composition-api";
 export default {
+  head: {
+    title: 'episodez',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Discover, create and share episode playlists of your favourite TV Shows.' },
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/png', href: './favicon.png' }
+    ]
+  },
+  
   setup(props, { emit }) {
     const currentTheme = ref("");
 

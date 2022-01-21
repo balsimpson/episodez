@@ -9,13 +9,13 @@
       class="absolute inset-0 z-0 bg-black opacity-80"
     ></div>
     <div
-      class="relative w-full max-w-3xl mx-auto my-auto transition duration-1000 transform bg-white shadow-lg rounded-xl"
+      class="relative w-full max-w-3xl mx-auto my-auto transition duration-1000 transform bg-white shadow-lg dark:bg-gray-700 rounded-xl"
       :class="[isActive ? 'scale-100': 'scale-0']"
     >
       <div @click="clickHandler" class="absolute cursor-pointer right-3 top-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-6 transition hover:text-red-500"
+          class="w-6 h-6 text-gray-400 transition dark:text-gray-500 hover:text-red-500 dark:hover:text-red-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

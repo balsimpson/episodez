@@ -58,6 +58,7 @@
 <script>
 import { ref, useStore, useRouter } from "@nuxtjs/composition-api";
 export default {
+  layout: "admin",
   setup() {
     const store = useStore();
     const router = useRouter();

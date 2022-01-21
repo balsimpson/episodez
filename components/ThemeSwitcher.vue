@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-start justify-between px-3 py-2 cursor-pointer hover:text-red-700 "
+    class="flex items-start justify-between px-3 py-3 cursor-pointer hover:text-red-200 dark:hover:text-red-200 dark:hover:bg-red-500 hover:bg-red-500 group"
   >
     <div class="text-sm font-bold uppercase">Dark mode</div>
     <input
@@ -12,7 +12,7 @@
       class="absolute w-full h-full -translate-x-1/2 rounded-md appearance-none left-1/2 peer "
     />
     <span
-      class="flex items-center flex-shrink-0 w-8 h-5 p-1 duration-300 ease-in-out bg-gray-300 rounded-full peer-checked:bg-red-500 after:w-3 after:h-3 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-3 group-hover:after:translate-x-0 "
+      class="flex items-center flex-shrink-0 w-8 h-5 p-1 duration-300 ease-in-out bg-gray-300 rounded-full cursor-pointer peer-checked:bg-red-500 dark:peer-checked:bg-red-200 after:w-3 after:h-3 after:bg-white dark:after:bg-red-500 after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-3 group-hover:after:translate-x-0"
     ></span>
   </div>
 </template>

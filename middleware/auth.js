@@ -2,7 +2,7 @@ export default function ({app, route, redirect}) {
     if (route.path === '/admin') {
         if (app.$fire.auth.currentUser) {
             //no redirect
-            // console.log('user', app.$fire.auth.currentUser);
+            console.log('user', app.$fire.auth.currentUser, route.path);
         } else {
             return redirect('/admin/signin');
             // return redirect('/');

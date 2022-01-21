@@ -30,15 +30,15 @@
     <div class="flex py-2 border-t border-gray-100 divide-x dark:border-gray-500 card__footer">
       <div class="flex items-center justify-center w-full">
         <FontAwesomeIcon icon="heart" class="text-gray-300 " />
-        <span class="flex-shrink-0 ml-2 text-sm font-semibold tracking-widest uppercase dark:text-gray-500 title-font">14 likes</span>
+        <span class="flex-shrink-0 ml-2 text-xs font-semibold uppercase dark:text-gray-500 title-font">14 likes</span>
       </div>
       <div class="flex items-center justify-center w-full">
         <FontAwesomeIcon icon="share-alt" class="text-gray-300 " />
-        <span class="flex-shrink-0 ml-2 text-sm font-semibold tracking-widest uppercase dark:text-gray-500 title-font">4 shares</span>
+        <span class="flex-shrink-0 ml-2 text-xs font-semibold uppercase dark:text-gray-500 title-font">4 shares</span>
       </div>
       <div class="flex items-center justify-center w-full">
-        <FontAwesomeIcon :icon="['fas', 'envelope']" class="text-gray-300 " />
-        <span class="flex-shrink-0 ml-2 text-sm font-semibold tracking-widest uppercase dark:text-gray-500 title-font">17 comments</span>
+        <FontAwesomeIcon :icon="['fas', 'comment']" class="text-gray-300 " />
+        <span class="flex-shrink-0 ml-2 text-xs font-semibold uppercase dark:text-gray-500 title-font">17 comments</span>
       </div>
       
     </div>

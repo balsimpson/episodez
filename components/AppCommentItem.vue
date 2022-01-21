@@ -8,7 +8,7 @@
           <div class="text-sm font-bold">10m</div>
         </div>
 
-        <div class="mt-1 text-sm">
+        <div class="w-full p-2 text-xs leading-4 text-gray-400 transition bg-gray-700 border-l-4 border-red-400 rounded-r focus:bg-gray-600 dark:focus:bg-gray-700 focus:outline-none">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto debitis
           quibusdam quasi non molestiae, perferendis maxime officiis incidunt
           eligendi veritatis.

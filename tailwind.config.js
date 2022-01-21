@@ -1,7 +1,7 @@
 const colors = require("tailwindcss/colors");
 module.exports = {
   mode: 'jit',
-  purge: [],
+  content: [],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -11,17 +11,20 @@ module.exports = {
       // display: ["Oswald"],
       body: ["Lato"],
     },
+    borderWidth: {
+      DEFAULT: "1px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       black: colors.black,
-      blue: colors.cyan,
+      blue: colors.blue,
       sky: colors.sky,
       white: colors.white,
       gray: colors.warmGray,
-      green: colors.teal,
+      green: colors.green,
       // red: colors.rose,
-      yellow: colors.amber,
+      yellow: colors.yellow,
       indigo: colors.indigo,
       purple: colors.fuchsia,
     },
@@ -51,6 +54,5 @@ module.exports = {
   },
   variants: {
     extend: {},
-  },
-  plugins: [],
+  }
 }

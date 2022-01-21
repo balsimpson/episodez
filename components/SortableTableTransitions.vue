@@ -60,9 +60,9 @@ export default {
   transition: transform 0.8s;
 }
 .ghost {
-  opacity: 0;
+  opacity: 0.1;
   background: #c8ebfb;
-  border: 1px solid;
+  border: 1px solid white;
 }
 .list-group {
   min-height: 30px;

@@ -2,13 +2,16 @@ const actions = {
   async onAuthStateChangedAction(state, { authUser, claims }) {
     if (!authUser) {
       state.commit('SET_USER', null)
+      state.commit('SET_LOGIN', false)
 
-      this.$router.push({
-        path: '/admin/signin'
-      })
+      // this.$router.push({
+      //   path: '/admin/signin'
+      // })
     } else {
-      const { uid, email } = authUser;
-      state.commit('SET_USER', { uid, email })
+      console.log('authUser', authUser, claims);
+      const { user_id, name, picture } = authUser;
+      state.commit('SET_USER', { user_id, name, picture })
+      state.commit('SET_LOGIN', true)
     }
   },
 
@@ -92,12 +95,18 @@ const actions = {
 const mutations = {
   SET_USER(state, user) {
     state.user = user;
+  },
+  SET_LOGIN(state, val) {
+    state.isLoggedIn = val;
   }
 }
 
-const state = () => ({
-  user: null
-})
+const state = () => (
+  {
+    user: null,
+    isLoggedIn: false
+  }
+)
 
 const getters = {
   getUser(state) {

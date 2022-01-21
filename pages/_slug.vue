@@ -1,5 +1,7 @@
 <template>
-  <div class="text-gray-600 transition-colors duration-200 bg-gray-200 dark:bg-gray-800 dark:text-gray-300 ">
+  <div
+    class="text-gray-600 transition-colors duration-200 bg-gray-200 dark:bg-gray-800 dark:text-gray-300 "
+  >
     <div
       class="flex flex-col items-start max-w-5xl p-4 mx-auto md:flex-row md:items-end "
     >
@@ -83,18 +85,15 @@
                   <!-- <div class="pt-2 text-xs">{{ item }}</div> -->
                 </div>
               </div>
-              <div
-                class="p-2 my-2 text-xs leading-4 text-gray-400 bg-gray-700 border-l-4 border-blue-600 rounded-r "
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Adipisci odit consequuntur ex aliquid velit accusamus
-                dignissimos a vero molestias ipsum?
-              </div>
 
-              <textarea
-                rows="2"
-                class="w-full p-2 my-2 text-xs leading-4 text-gray-400 transition bg-gray-700 border-l-4 border-blue-600 rounded-r focus:bg-gray-600 focus:outline-none "
-              ></textarea>
+              <div class="relative group">
+                <textarea
+                  rows="2"
+                  class="pr-12 input-comment"
+                  placeholder="add a comment"
+                ></textarea>
+                <FontAwesomeIcon icon="comment" class="absolute text-2xl text-gray-400 right-2 top-4 group-focus:text-gray-300" /> 
+              </div>
             </div>
             <div class="py-6">
               <div class="flex">
@@ -212,17 +211,23 @@
         </div>
 
         <div class="w-1/3 pl-2">
-         <div class="bg-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic temporibus quos autem quae architecto minus quasi consectetur deleniti rerum? Placeat?</div> 
+          <div class="bg-gray-700">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+            temporibus quos autem quae architecto minus quasi consectetur
+            deleniti rerum? Placeat?
+          </div>
         </div>
       </div>
-    <AppComments />
+      <AppComments />
     </div>
-
   </div>
 </template>
 
 <script>
-export default {};
+import FontAwesomeIcon1 from "~/components/FontAwesomeIcon1.vue";
+export default {
+  components: { FontAwesomeIcon1 },
+};
 </script>
 
 <style>

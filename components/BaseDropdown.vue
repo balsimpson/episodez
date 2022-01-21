@@ -4,7 +4,7 @@
       <button
         @click.prevent="clickHandler"
         type="button"
-        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-red-500 "
+        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm dark:text-gray-300 dark:bg-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-red-500 "
         id="menu-button"
         aria-expanded="true"
         aria-haspopup="true"
@@ -39,7 +39,7 @@
   -->
     <div
       v-if="showDropdown"
-      class="absolute right-0 w-full mt-2 overflow-scroll origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none max-h-52"
+      class="absolute right-0 w-full mt-2 overflow-scroll origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg dark:bg-gray-500 ring-1 ring-black ring-opacity-5 focus:outline-none max-h-52"
       role="menu"
       aria-orientation="vertical"
       aria-labelledby="menu-button"
@@ -50,7 +50,7 @@
         <a
           @click.prevent="optionSelect(item)"
           href="#"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
+          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-400"
           role="menuitem"
           tabindex="-1"
           id="menu-item-0"

@@ -1,15 +1,15 @@
 <template>
   <div
-    class="text-gray-600 transition-colors duration-200 bg-gray-200  dark:bg-gray-800 dark:text-gray-300 "
+    class="text-gray-600 transition-colors duration-200 bg-gray-200 dark:bg-gray-800 dark:text-gray-300 "
   >
     <div>
       <div class="max-w-5xl p-4 mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3">
           <div
-            class="flex flex-col items-center justify-center text-center  md:text-left "
+            class="flex flex-col items-center justify-center text-center md:text-left "
           >
             <h1
-              class="w-4/5 mx-auto text-4xl font-semibold leading-none tracking-tighter text-center text-gray-600  dark:text-gray-400 md:w-full md:text-left sm:w-1/2 sm:text-4xl title-font "
+              class="w-4/5 mx-auto text-4xl font-semibold leading-none tracking-tighter text-center text-gray-600 dark:text-gray-400 md:w-full md:text-left sm:w-1/2 sm:text-4xl title-font "
             >
               Create and share episode
               <span class="text-red-500">playlists</span>
@@ -30,29 +30,31 @@
           </div>
           <div class="flex flex-col items-center justify-center space-y-2">
             <div
-              class="max-w-md p-2 px-4 text-red-500 transition border border-red-500 rounded cursor-pointer  hover:bg-red-500 hover:text-gray-200 dark:text-red-300 dark:border-red-300 dark:hover:text-red-200 "
+              class="max-w-md p-2 px-4 transition border border-red-500 rounded cursor-pointer hover:bg-red-500 hover:text-gray-200 dark:text-red-300 dark:border-red-400 dark:hover:text-red-200 "
             >
               <NuxtLink to="/cxsdsdsd">
-                <div class="font-bold">Pranking Is Fun</div>
-                <div class="text-xs">
-                  8 Episodes from Brooklyn Nine Nine, Parks and Recreations and
-                  The Office
+                <div class="mb-4 text-xl font-bold leading-5 text-red-500 dark:text-yellow-200">Pranking Is Fun Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, est!</div>
+                <div class="text-xs leading-4 dark:text-red-200">
+                  
+                    8 Episodes from <span class="inline-block px-1 mb-1 font-semibold text-white rounded bg-red-500/70 dark:bg-red-300/40">Brooklyn Nine Nine</span>, <span class="inline-block px-1 mb-1 font-semibold text-white rounded bg-red-500/70 dark:bg-red-300/40">Parks and Recreations</span> and
+                  <span class="inline-block px-1 mb-1 font-semibold text-white rounded bg-red-500/70 dark:bg-red-300/40">The Office</span>
+                 
                 </div>
               </NuxtLink>
             </div>
 
             <div
-              class="max-w-md p-2 px-4 text-red-500 transition border border-red-500 rounded cursor-pointer  hover:bg-red-500 hover:text-gray-200 "
+              class="max-w-md p-2 px-4 text-red-500 transition border border-red-500 rounded cursor-pointer hover:bg-red-500 hover:text-gray-200 "
             >
               <div class="font-bold">Pranking Is Fun</div>
               <div class="text-xs">
-                8 Episodes from Brooklyn Nine Nine, Parks and Recreations and
+                8 Episodes from Brooklyn Nine Nine, <span class="inline-block px-1 text-black bg-yellow-300 rounded">Parks and Recreations</span> and
                 The Office
               </div>
             </div>
 
             <div
-              class="max-w-md p-2 px-4 text-red-500 transition border border-red-500 rounded cursor-pointer  hover:bg-red-500 hover:text-gray-200 "
+              class="max-w-md p-2 px-4 text-red-500 transition border border-red-500 rounded cursor-pointer hover:bg-red-500 hover:text-gray-200 "
             >
               <div class="font-bold">Pranking Is Fun</div>
               <div class="text-xs">
@@ -64,6 +66,10 @@
         </div>
       </div>
     </div>
+
+    <ModalHeadless />
+
+    <TagInput />
 
     <div class="py-12">
       <button @click="showToast">Toast</button>
@@ -100,7 +106,7 @@
         <section class="text-blueGray-700">
           <div class="container items-center px-5 py-12 lg:px-20">
             <div
-              class="flex flex-col w-full max-w-md p-10 mx-auto my-6 transition duration-500 ease-in-out transform bg-white rounded-lg  md:mt-0 "
+              class="flex flex-col w-full max-w-md p-10 mx-auto my-6 transition duration-500 ease-in-out transform bg-white rounded-lg md:mt-0 "
             >
               <div class="mt-8">
                 <div class="mt-6">
@@ -120,7 +126,7 @@
                           autocomplete="email"
                           required=""
                           placeholder="Your Email"
-                          class="block w-full px-5 py-3 text-base text-black placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 "
+                          class="block w-full px-5 py-3 text-base text-black placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 "
                         />
                       </div>
                     </div>
@@ -139,7 +145,7 @@
                           autocomplete="current-password"
                           required=""
                           placeholder="Your Password"
-                          class="block w-full px-5 py-3 text-base text-black placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 "
+                          class="block w-full px-5 py-3 text-base text-black placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 "
                         />
                       </div>
                     </div>
@@ -150,7 +156,7 @@
                           name="remember-me"
                           type="checkbox"
                           placeholder="Your password"
-                          class="w-4 h-4 text-blue-400 border-gray-200 rounded  focus:ring-blue-500 "
+                          class="w-4 h-4 text-blue-400 border-gray-200 rounded focus:ring-blue-500 "
                         />
                         <label
                           for="remember-me"
@@ -171,7 +177,7 @@
                     <div>
                       <button
                         type="submit"
-                        class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400  rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 "
+                        class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400 rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 "
                       >
                         Sign in
                       </button>
@@ -273,6 +279,8 @@ import ListPublisher from "~/components/ListPublisher.vue";
 import ProfileDropdown from "~/components/ProfileDropdown.vue";
 import ComponentsPlayground from "../../episodez-nuxt/components/ComponentsPlayground.vue";
 import AppCommentItem from "~/components/AppCommentItem.vue";
+import TagInput from '~/components/TagInput.vue';
+import ModalHeadless from '~/components/ModalHeadless.vue';
 
 export default {
   head: {
@@ -292,6 +300,8 @@ export default {
     ProfileDropdown,
     ComponentsPlayground,
     AppCommentItem,
+    TagInput,
+    ModalHeadless,
   },
   setup(props, { emit }) {
     const { $fire } = useContext();

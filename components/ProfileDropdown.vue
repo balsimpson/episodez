@@ -1,38 +1,51 @@
 <template>
   <div class="relative">
-    <div
-      @click="showDropdown = !showDropdown"
-      class="w-6 h-6 bg-red-500 rounded-full cursor-pointer hover:ring-2 ring-red-300 "
-    ></div>
+    <!-- {{ userProfile }} -->
+    <div @click="showDropdown = !showDropdown">
+      <!-- {{userProfile}} -->
+      <div v-if="userProfile">
+        <img
+          :src="userProfile.photoURL"
+          alt=""
+          class="w-6 h-6 rounded-full hover:rounded-lg"
+        />
+      </div>
+
+      <div v-else>
+        <FontAwesomeIcon
+          icon="user-circle"
+          class="text-gray-500 rounded-full cursor-pointer hover:ring hover:ring-red-300 dark:text-gray-600 "
+        />
+      </div>
+    </div>
     <transition name="slide-in-up">
       <div
         v-if="showDropdown"
-        class="absolute right-0 text-gray-700 bg-white border rounded shadow-lg w-44 top-8"
+        class="absolute right-0 text-gray-700 bg-white border rounded shadow-lg dark:text-gray-400 dark:bg-gray-700 w-44 top-8 dark:border-gray-600 "
       >
-        <div class="divide-y divide-gray-200">
-          <div
-            class="flex items-center px-3 py-2 cursor-pointer hover:text-red-700 "
-          >
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+        <div class="divide-y divide-gray-200 dark:divide-gray-600">
+          <!-- User profile -->
+          <NuxtLink to="/profile" @click="showDropdown = !showDropdown">
+            <div class="profile-item">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="ml-2 text-sm font-bold uppercase">Profile</div>
             </div>
-            <div class="ml-2 text-sm font-bold uppercase">Profile</div>
-          </div>
-          <div
-            @keydown="selectOption"
-            class="flex items-center px-3 py-2 cursor-pointer hover:text-red-700 "
-          >
+          </NuxtLink>
+
+          <div @keydown="selectOption" class="profile-item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-5 h-5"
@@ -47,11 +60,8 @@
             </svg>
             <div class="ml-2 text-sm font-bold uppercase">Favorites</div>
           </div>
-          
-          <div
-            @click="selectOption"
-            class="flex items-center px-3 py-2 cursor-pointer hover:text-red-700 "
-          >
+
+          <div @click="logout" class="profile-item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-5 h-5"
@@ -67,10 +77,7 @@
             <div class="ml-2 text-sm font-bold uppercase">Logout</div>
           </div>
 
-          <slot name="themeSwitcher">
-
-          </slot>
-          
+          <slot name="themeSwitcher"> </slot>
         </div>
       </div>
     </transition>
@@ -85,30 +92,64 @@
 </template>
 
 <script>
-import { ref } from "@nuxtjs/composition-api";
-import BaseDropdown from "./BaseDropdown.vue";
-import FontAwesomeIcon from "./FontAwesomeIcon1.vue";
-import ThemeSwitcher from './ThemeSwitcher.vue';
+import {
+  computed,
+  onMounted,
+  ref,
+  useContext,
+  useStore,
+  watchEffect,
+} from "@nuxtjs/composition-api";
+import FontAwesomeIcon1 from "./FontAwesomeIcon1.vue";
+
 export default {
-  components: { BaseDropdown, FontAwesomeIcon, ThemeSwitcher },
+  components: { FontAwesomeIcon1 },
   setup(props, { emit }) {
+    const { $fire } = useContext();
+    const store = useStore();
     const showDropdown = ref(false);
+    const userProfile = ref("");
+
+    // let userProfile = computed(() => {
+    //   // console.log("userProfile", userProfile.value)
+    //   return store.state.user;
+    // });
+
+    watchEffect(() => {
+      userProfile.value = $fire.auth.currentUser;
+      console.log("user-profile", store.state.user);
+      console.log("watchEffect", userProfile.value);
+    });
 
     const clickHandler = (e) => {
       // console.log("e", e);
       showDropdown.value = !showDropdown.value;
     };
 
-    const selectOption = (val) => {
-      console.log("val", val);
+    const selectOption = (val) => {};
+
+    onMounted(() => {
+      userProfile.value = store.state.user;
+      
+      console.log("user", $fire.auth.currentUser);
+    });
+
+    const logout = (val) => {
+      $fire.auth.signOut();
+      userProfile.value = null;
+      showDropdown.value = !showDropdown.value;
     };
 
-    return { showDropdown, selectOption, clickHandler };
+    return { showDropdown, selectOption, clickHandler, logout, userProfile };
   },
 };
 </script>
 
-<style>
+<style lang="postcss">
+.profile-item {
+  @apply flex items-center px-3 py-3 cursor-pointer hover:text-red-200 dark:hover:text-red-200 dark:hover:bg-red-500 hover:bg-red-500;
+}
+
 .outside {
   width: 100vw;
   height: 100vh;

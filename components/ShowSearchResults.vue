@@ -6,7 +6,7 @@
         <div v-for="item in results" :key="item.id">
           <BaseCardImg
             @clicked="clickHandler(item)"
-            class="text-center cursor-pointer hover:border-black hover:border"
+            class="text-center border-2 border-transparent cursor-pointer hover:border-red-500"
             :item="item"
           />
         </div>
