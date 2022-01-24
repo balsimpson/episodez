@@ -14,12 +14,7 @@
 
       <SearchBar @query="doSearch" placeholder="Try 'The Office'" />
 
-      <YoutubeEmbed />
-      <YoutubeEmbed />
-      <YoutubeEmbed />
-      <YoutubeEmbed />
-      <YoutubeEmbed />
-      <YoutubeEmbed />
+      
       
 
       <ShowSearchResults

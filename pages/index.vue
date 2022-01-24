@@ -67,9 +67,9 @@
       </div>
     </div>
 
-    <ModalHeadless />
+    <!-- <ModalHeadless /> -->
 
-    <TagInput />
+    <TagInput :suggestions="[]" />
 
     <div class="py-12">
       <button @click="showToast">Toast</button>
@@ -101,7 +101,7 @@
       <ComponentsPlaygroundNew />
     </div>
 
-    <BaseModal :isActive="false">
+    <BaseModal :isActive="false" :item="{}">
       <template #header>
         <section class="text-blueGray-700">
           <div class="container items-center px-5 py-12 lg:px-20">

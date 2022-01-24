@@ -5,7 +5,7 @@
         v-model="query"
         type="text"
         :placeholder="placeholder"
-        class="w-full px-3 py-3 font-bold text-red-500 border-2 rounded-lg dark:text-red-200 focus:outline-none focus:ring-1 focus:ring-red-500 dark:bg-gray-600 dark:border-gray-500"
+        class="w-full px-3 py-3 font-bold text-red-500 border border-gray-300 rounded-lg dark:text-red-200 focus:outline-none focus:ring-1 focus:ring-red-500 dark:bg-gray-600 dark:border-gray-500"
       />
       <div class="absolute inset-y-0 right-0">
         <div
